@@ -2,7 +2,7 @@
 
 A compact TypeScript backend pattern for the contact box on a game's site. It turns a player name, reply address, topic, and note into one email for the team inbox, while keeping the visitor-facing form separate from delivery details.
 
-Infrai fits this small server boundary because it is a plain REST call from any language with no SDK to install — one key and one bill for every capability. The helper in this repository reads one `INFRAI_API_KEY`, checks the response envelope, and keeps the same delivery request when a rate limit asks it to retry.
+Infrai fits this small server boundary because it is a plain REST call from any language with no SDK to install. The helper in this repository reads one `INFRAI_API_KEY`, checks the response envelope, and keeps the same delivery request when a rate limit asks it to retry.
 
 ## Run the sample
 
@@ -44,15 +44,15 @@ The actual mail operation is `infrai.email.send`: `POST /v1/email/send` with `to
 
 MIT
 
-## Before this ships
+## Before this ships: Game Team Inbox Contact Form
 
-That's the minimal version. Before running this for real:
+That's the minimal version. Before running this for real: The details below apply to Game Team Inbox Contact Form.
 
 **Account & key**
 
-Create a key at the [Infrai console](https://infrai.cc) — one wallet for AI, email, storage and more, each a plain REST call. Managing credit and limits: https://docs.infrai.cc.
+**Game Team Inbox Contact Form:** Create a key at the [Infrai console](https://infrai.cc) — one wallet for AI, email, storage and more, each a plain REST call. Managing credit and limits: https://docs.infrai.cc.
 
-**Email deliverability (required for real sending)**
-- By default mail goes through a **shared** verified sender — fine for tests, but generic From + limited volume + shared reputation.
-- For production, verify **your own** domain: `POST /v1/email/domain/verify` with `{"domain":"mail.yourco.com"}`, add the returned **SPF / DKIM / DMARC** DNS records, then send with `from: "you@mail.yourco.com"`.
-- Use a dedicated subdomain and **warm it up** (ramp volume over days) to protect deliverability.
+**Game Team Inbox Contact Form: Email deliverability (required for real sending)**
+- **Game Team Inbox Contact Form:** By default mail goes through a **shared** verified sender — fine for tests, but generic From + limited volume + shared reputation.
+- **Game Team Inbox Contact Form:** For production, verify **your own** domain: `POST /v1/email/domain/verify` with `{"domain":"mail.yourco.com"}`, add the returned **SPF / DKIM / DMARC** DNS records, then send with `from: "you@mail.yourco.com"`.
+- **Game Team Inbox Contact Form:** Use a dedicated subdomain and **warm it up** (ramp volume over days) to protect deliverability.

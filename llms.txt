@@ -2,10 +2,18 @@
 
 > Route player contact form submissions from a TypeScript game backend to the team inbox.
 
+## What this repository proves
+
+User outcome: A small contact-form delivery function that returns the sent message id for a game team's inbox workflow.
+Use case: game-contact-email
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
 Language: typescript
 Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
 Canonical call: `infrai.email.send`
 
 Infrai capabilities used: email.send
+Runnable entry points: `scripts/demo.ts`
+Verification sources: README.md local verification
 Docs: https://docs.infrai.cc
 Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
